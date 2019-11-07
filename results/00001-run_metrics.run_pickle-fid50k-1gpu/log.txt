@@ -1,0 +1,28 @@
+dnnlib: Running run_metrics.run_pickle() on localhost...
+Evaluating fid50k metric on network_pkl "https://drive.google.com/uc?id=1MEGjdvVpUsu1jB4zrXZN7Y4kBBOzizDQ"...
+
+Downloading https://drive.google.com/uc?id=1MzTY44rLToO5APn8TZmfR7_ENSe5aZUn ... done
+Traceback (most recent call last):
+  File "run_metrics.py", line 103, in <module>
+    main()
+  File "run_metrics.py", line 98, in main
+    dnnlib.submit_run(submit_config, metric_args=metric, **task)
+  File "/home/mouck148/StyleGAN-Anime/dnnlib/submission/submit.py", line 290, in submit_run
+    run_wrapper(submit_config)
+  File "/home/mouck148/StyleGAN-Anime/dnnlib/submission/submit.py", line 242, in run_wrapper
+    util.call_func_by_name(func_name=submit_config.run_func_name, submit_config=submit_config, **submit_config.run_func_kwargs)
+  File "/home/mouck148/StyleGAN-Anime/dnnlib/util.py", line 257, in call_func_by_name
+    return func_obj(*args, **kwargs)
+  File "/home/mouck148/StyleGAN-Anime/run_metrics.py", line 26, in run_pickle
+    metric.run(network_pkl, dataset_args=dataset_args, mirror_augment=mirror_augment, num_gpus=submit_config.num_gpus)
+  File "/home/mouck148/StyleGAN-Anime/metrics/metric_base.py", line 60, in run
+    self._evaluate(Gs, num_gpus=num_gpus)
+  File "/home/mouck148/StyleGAN-Anime/metrics/frechet_inception_distance.py", line 38, in _evaluate
+    for idx, images in enumerate(self._iterate_reals(minibatch_size=minibatch_size)):
+  File "/home/mouck148/StyleGAN-Anime/metrics/metric_base.py", line 102, in _iterate_reals
+    dataset_obj = dataset.load_dataset(data_dir=config.data_dir, **self._dataset_args)
+  File "/home/mouck148/StyleGAN-Anime/training/dataset.py", line 234, in load_dataset
+    dataset = dnnlib.util.get_obj_by_name(class_name)(**adjusted_kwargs)
+  File "/home/mouck148/StyleGAN-Anime/training/dataset.py", line 70, in __init__
+    assert os.path.isdir(self.tfrecord_dir)
+AssertionError

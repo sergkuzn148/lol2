@@ -1,0 +1,1 @@
+{'host_name': 'localhost', 'start_time': '2019-11-07 14:15:24.684346', 'task_name': 'mouck148-00001-run_metrics.run_pickle-fid50k-1gpu'}

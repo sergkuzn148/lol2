@@ -1,0 +1,1 @@
+{'host_name': 'localhost', 'start_time': '2019-11-07 14:16:18.329018', 'task_name': 'mouck148-00002-sgan-ffhq-8gpu'}
